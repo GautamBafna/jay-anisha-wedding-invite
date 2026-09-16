@@ -128,8 +128,8 @@ function Index() {
         <div className="invitation-frame absolute inset-3 md:inset-7" />
         <div className="relative z-10 max-w-2xl">
           <p className="mx-auto mb-5 w-fit border border-gold/50 bg-wine-deep/60 px-4 py-2 text-[9px] uppercase tracking-[.22em] text-gold-soft">24—25 November · Mahabaleshwar</p>
-          <h2 className="font-display text-5xl leading-none sm:text-7xl">And then, <em>the hills.</em></h2>
-          <p className="mx-auto mt-7 max-w-xl font-display text-lg leading-8 text-ivory/85">The mountains become our backdrop for a Sangeet beneath the evening sky, a joyful Carnival, and the moment Jay and Anisha begin their forever together.</p>
+          <h2 className="mx-auto w-fit rounded-sm bg-wine-deep/25 px-6 py-3 font-display text-5xl leading-none backdrop-blur-[2px] sm:text-7xl">And then, <em>the hills.</em></h2>
+          <p className="mx-auto mt-7 max-w-xl rounded-sm bg-wine-deep/20 px-6 py-4 font-display text-lg leading-8 text-ivory/85 backdrop-blur-[2px]">The mountains become our backdrop for a Sangeet beneath the evening sky, a joyful Carnival, and the moment Jay and Anisha begin their forever together.</p>
         </div>
       </section>
 
