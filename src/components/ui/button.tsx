@@ -10,6 +10,10 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+        invitation:
+          "border border-gold/70 bg-wine/70 text-ivory shadow-invitation backdrop-blur-sm hover:bg-gold hover:text-wine focus-visible:ring-gold",
+        invitationGhost:
+          "border border-gold/35 bg-transparent text-gold hover:border-gold hover:bg-gold/10 focus-visible:ring-gold",
         destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
           "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",

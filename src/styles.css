@@ -19,6 +19,9 @@
  */
 
 @theme inline {
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-script: "Italianno", cursive;
+  --font-body: "DM Sans", sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -59,6 +62,13 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-wine: var(--wine);
+  --color-wine-deep: var(--wine-deep);
+  --color-ivory: var(--ivory);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-rose: var(--rose);
+  --shadow-invitation: var(--invitation-shadow);
 }
 
 :root {
@@ -95,6 +105,13 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+  --wine: oklch(0.27 0.11 8);
+  --wine-deep: oklch(0.14 0.055 6);
+  --ivory: oklch(0.965 0.025 82);
+  --gold: oklch(0.73 0.12 78);
+  --gold-soft: oklch(0.86 0.085 82);
+  --rose: oklch(0.58 0.12 13);
+  --invitation-shadow: 0 24px 80px color-mix(in oklab, var(--wine-deep) 78%, transparent);
 }
 
 .dark {
@@ -140,5 +157,49 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
   }
+}
+
+html { scroll-behavior: smooth; }
+body { overflow-x: hidden; }
+
+@keyframes card-rise {
+  0% { opacity: 0; transform: translateY(22%) scale(.9); }
+  100% { opacity: 1; transform: translateY(-8%) scale(1); }
+}
+@keyframes cover-drift {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.06); visibility: hidden; }
+}
+@keyframes shimmer {
+  0%, 100% { opacity: .35; }
+  50% { opacity: .9; }
+}
+@keyframes petal-fall {
+  0% { transform: translate3d(0,-12vh,0) rotate(0); }
+  100% { transform: translate3d(9vw,112vh,0) rotate(430deg); }
+}
+
+@utility invitation-frame {
+  border: 1px solid color-mix(in oklab, var(--gold) 58%, transparent);
+  box-shadow: inset 0 0 0 7px color-mix(in oklab, var(--gold) 7%, transparent), var(--invitation-shadow);
+}
+@utility paper-texture {
+  background-image: radial-gradient(circle at 20% 20%, color-mix(in oklab, var(--gold) 7%, transparent) 0 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+@utility reveal-section {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .9s ease, transform .9s ease;
+  &.is-visible { opacity: 1; transform: none; }
+}
+@utility event-panel {
+  background: linear-gradient(145deg, color-mix(in oklab, var(--ivory) 6%, transparent), transparent);
+  border: 1px solid color-mix(in oklab, var(--gold) 28%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
