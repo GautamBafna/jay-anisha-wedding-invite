@@ -72,9 +72,9 @@ function Index() {
 
       <header id="home" className="relative grid min-h-[92svh] place-items-center overflow-hidden text-center">
         <img src={palaceImage} alt="Royal palace arch overlooking the Mahabaleshwar hills with a peacock and elephant" width={1440} height={1920} className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-wine-deep/25" />
+        <div className="absolute inset-0 bg-wine-deep/15 sm:bg-wine-deep/25" />
         <div className="invitation-frame absolute inset-3 md:inset-7" />
-        <div className="relative z-10 mx-5 max-w-2xl bg-ivory/90 px-7 py-12 text-wine-deep shadow-invitation backdrop-blur-[2px] sm:px-14 sm:py-16">
+        <div className="relative z-10 mx-5 max-w-2xl bg-ivory/80 px-6 py-10 text-wine-deep shadow-invitation backdrop-blur-[2px] sm:bg-ivory/90 sm:px-14 sm:py-16">
           <p className="text-[10px] uppercase tracking-[.3em]">Together with their families</p>
           <div className="mx-auto my-5 h-px w-24 bg-gold" />
           <h1 className="font-script text-6xl leading-[1.1] sm:text-8xl">Jay <span className="block py-2 text-3xl">&amp;</span> Anisha</h1>
@@ -122,11 +122,14 @@ function Index() {
         </div>
       </section>
 
-      <section id="hills" className="reveal-section relative grid min-h-[72svh] place-items-center overflow-hidden px-5 py-24 text-center">
-        <img src={terraceImage} alt="Ornate palace terrace overlooking the Mahabaleshwar hills at sunset" loading="lazy" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-wine-deep/45" />
+      <section id="hills" className="reveal-section relative overflow-hidden px-5 py-24 text-center sm:grid sm:min-h-[72svh] sm:place-items-center">
+        <img src={terraceImage} alt="" aria-hidden="true" loading="lazy" width={1920} height={1088} className="absolute inset-0 hidden h-full w-full object-cover sm:block" />
+        <div className="absolute inset-0 hidden bg-wine-deep/45 sm:block" />
         <div className="invitation-frame absolute inset-3 md:inset-7" />
-        <div className="relative z-10 max-w-2xl">
+        <div className="invitation-frame relative z-10 mx-auto mb-10 max-w-2xl overflow-hidden sm:hidden">
+          <img src={terraceImage} alt="Ornate palace terrace overlooking the Mahabaleshwar hills at sunset" loading="lazy" width={1920} height={1088} className="h-auto w-full" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-2xl">
           <p className="mx-auto mb-5 w-fit border border-gold/50 bg-wine-deep/60 px-4 py-2 text-[9px] uppercase tracking-[.22em] text-gold-soft">24—25 November · Mahabaleshwar</p>
           <h2 className="mx-auto w-fit rounded-sm bg-wine-deep/25 px-6 py-3 font-display text-5xl leading-none backdrop-blur-[2px] sm:text-7xl">And then, <em>the hills.</em></h2>
           <p className="mx-auto mt-7 max-w-xl rounded-sm bg-wine-deep/20 px-6 py-4 font-display text-lg leading-8 text-ivory/85 backdrop-blur-[2px]">The mountains become our backdrop for a Sangeet beneath the evening sky, a joyful Carnival, and the moment Jay and Anisha begin their forever together.</p>
