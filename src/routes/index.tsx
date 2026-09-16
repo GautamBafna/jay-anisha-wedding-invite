@@ -55,7 +55,7 @@ function Index() {
         {petals.map((petal, i) => <span key={i} className="absolute -top-6 h-3 w-2 rounded-[80%_15%_80%_15%] bg-rose/35" style={{ left: petal.left, animation: `petal-fall ${petal.duration} linear ${petal.delay} infinite` }} />)}
       </div>
 
-      <section className={`fixed inset-0 z-50 grid place-items-center overflow-hidden bg-wine-deep transition-[opacity,visibility] duration-1000 ${opened ? "pointer-events-none invisible opacity-0 delay-[1600ms]" : "visible opacity-100"}`} aria-label="Open wedding invitation">
+      <section className={`fixed inset-0 z-50 grid place-items-center overflow-hidden bg-wine-deep transition-[opacity,visibility] duration-500 ${opened ? "pointer-events-none invisible opacity-0 delay-[1100ms]" : "visible opacity-100"}`} aria-label="Open wedding invitation">
         <img src={envelopeImage} alt="Burgundy velvet wedding envelope with a gold J and A seal" className={`absolute inset-0 h-full w-full object-cover transition-transform duration-[2400ms] ${opened ? "scale-110" : "scale-100"}`} />
         <div className="absolute inset-0 bg-wine-deep/35" />
         <div className="invitation-frame absolute inset-3 md:inset-7" />
