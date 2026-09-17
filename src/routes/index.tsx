@@ -39,7 +39,16 @@ const venues = [
 
 function Index() {
   const [opened, setOpened] = useState(false);
+  const [namesFontReady, setNamesFontReady] = useState(false);
   const petals = useMemo(() => Array.from({ length: 14 }, (_, i) => ({ left: `${(i * 37) % 97}%`, delay: `${-(i * 1.17)}s`, duration: `${10 + (i % 6)}s` })), []);
+
+  useEffect(() => {
+    let active = true;
+    document.fonts.load('72px "Anastasia Script"', "Jay & Anisha").then(() => {
+      if (active) setNamesFontReady(true);
+    });
+    return () => { active = false; };
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = opened ? "" : "hidden";
@@ -56,10 +65,13 @@ function Index() {
       </div>
 
       <section className={`fixed inset-0 z-50 grid place-items-center overflow-hidden bg-wine-deep transition-[opacity,visibility] duration-500 ${opened ? "pointer-events-none invisible opacity-0 delay-[1100ms]" : "visible opacity-100"}`} aria-label="Open wedding invitation">
-        <img src={envelopeImage} alt="Burgundy velvet wedding envelope with a gold J and A seal" className={`absolute inset-0 h-full w-full object-cover transition-transform duration-[2400ms] ${opened ? "scale-110" : "scale-100"}`} />
+        <img src={envelopeImage} alt="" aria-hidden="true" className={`absolute inset-0 h-full w-full scale-110 object-cover blur-[2px] transition-transform duration-[2400ms] sm:scale-100 sm:blur-none ${opened ? "sm:scale-110" : "sm:scale-100"}`} />
         <div className="absolute inset-0 bg-wine-deep/35" />
+        <div className={`invitation-frame absolute top-[12svh] left-1/2 z-[1] w-[92vw] -translate-x-1/2 overflow-hidden bg-wine-deep shadow-invitation transition-all duration-1000 sm:hidden ${opened ? "-translate-y-6 scale-105 opacity-0" : "opacity-100"}`}>
+          <img src={envelopeImage} alt="Burgundy velvet wedding envelope with a gold J and A seal, surrounded by flowers, candles and traditional ornaments" width={2528} height={1696} className="h-auto w-full" />
+        </div>
         <div className="invitation-frame absolute inset-3 md:inset-7" />
-        <div className={`paper-texture invitation-frame relative mx-6 flex min-h-[55vh] w-[min(86vw,560px)] flex-col items-center justify-center bg-ivory px-7 py-16 text-center text-wine-deep transition-all duration-1000 ${opened ? "animate-[card-rise_1.5s_cubic-bezier(.2,.8,.2,1)_forwards]" : "translate-y-[115%] opacity-0"}`}>
+        <div className={`paper-texture invitation-frame relative z-10 mx-6 flex min-h-[55vh] w-[min(86vw,560px)] flex-col items-center justify-center bg-ivory px-7 py-16 text-center text-wine-deep transition-all duration-1000 ${opened ? "animate-[card-rise_1.5s_cubic-bezier(.2,.8,.2,1)_forwards]" : "translate-y-[115%] opacity-0"}`}>
           <p className="text-[10px] uppercase tracking-[.3em] text-wine">Together with their families</p>
           <div className="my-6 h-px w-24 bg-gold" />
           <h1 className="font-names text-7xl leading-[1.1] sm:text-8xl">Jay <span className="block py-2 text-4xl">&amp;</span> Anisha</h1>
@@ -67,7 +79,7 @@ function Index() {
           <p className="mt-5 text-xs uppercase tracking-[.22em] text-wine/75">21 — 27 November 2026</p>
           <p className="mt-2 text-[10px] uppercase tracking-[.25em] text-wine/60">Pune · Mahabaleshwar</p>
         </div>
-        <Button variant="invitation" size="lg" onClick={() => setOpened(true)} className={`absolute bottom-12 h-12 rounded-full px-8 text-[10px] uppercase tracking-[.24em] transition-all duration-500 ${opened ? "pointer-events-none opacity-0" : "opacity-100"}`}>Open the invitation</Button>
+        <Button variant="invitation" size="lg" disabled={!namesFontReady} onClick={() => setOpened(true)} className={`absolute bottom-12 z-10 h-12 rounded-full px-8 text-[10px] uppercase tracking-[.24em] transition-all duration-500 ${opened || !namesFontReady ? "pointer-events-none opacity-0" : "opacity-100"}`}>Open the invitation</Button>
       </section>
 
       <header id="home" className="relative grid min-h-[92svh] place-items-center overflow-hidden text-center">

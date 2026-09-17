@@ -7,7 +7,7 @@
   src: url("/fonts/AnastasiaScript.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @custom-variant dark (&:is(.dark *));
