@@ -5,7 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import envelopeImage from "@/assets/envelope-opening.jpg";
 import palaceImage from "@/assets/royal-palace-hills.jpg";
-import terraceImage from "@/assets/mahabaleshwar-terrace.jpg";
+import floralPalaceImage from "@/assets/floral-palace-decor.jpg";
+import elephantImage from "@/assets/royal-elephant-procession.jpg";
+import receptionImage from "@/assets/candlelit-reception.jpg";
+import hillsPortraitImage from "@/assets/mahabaleshwar-hills-portrait.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -89,7 +92,7 @@ function Index() {
         <div className="relative z-10 mx-5 max-w-2xl bg-ivory/80 px-6 py-10 text-wine-deep shadow-invitation backdrop-blur-[2px] sm:bg-ivory/90 sm:px-14 sm:py-16">
           <p className="text-[10px] uppercase tracking-[.3em]">Together with their families</p>
           <div className="mx-auto my-5 h-px w-24 bg-gold" />
-          <h1 className="font-script text-6xl leading-[1.1] sm:text-8xl">Jay <span className="block py-2 text-3xl">&amp;</span> Anisha</h1>
+          <h1 className="font-names text-6xl leading-none sm:text-8xl sm:leading-[1.1]">Jay <span className="block py-1 text-3xl leading-none sm:py-2 sm:text-4xl">&amp;</span> Anisha</h1>
           <p className="mt-8 font-display text-2xl italic">You are cordially invited</p>
           <p className="mt-6 font-display text-lg uppercase tracking-[.16em]">21 — 27 November 2026</p>
           <p className="mt-2 text-[10px] uppercase tracking-[.27em] text-wine/70">Pune · Mahabaleshwar</p>
@@ -104,17 +107,27 @@ function Index() {
         </div>
       </nav>
 
-      <section className="reveal-section bg-ivory px-5 py-24 text-center text-wine-deep">
-        <div className="mx-auto max-w-3xl">
-          <p className="text-[10px] uppercase tracking-[.28em] text-wine/65">A new chapter begins</p>
-          <h2 className="mt-4 font-display text-5xl leading-none sm:text-7xl">Seven days.<br/><em>Countless memories.</em></h2>
-          <div className="mx-auto my-8 h-px w-28 bg-gold" />
-          <p className="mx-auto max-w-2xl font-display text-lg leading-8 text-wine/75">With joyful hearts, we invite you to share in the wedding celebrations of <strong>Jay Bafna</strong> and <strong>Anisha Gadia</strong> — a journey filled with traditions, music, laughter, family and love.</p>
+      <section className="reveal-section bg-ivory text-wine-deep">
+        <div className="grid lg:grid-cols-[1.05fr_.95fr]">
+          <div className="flex items-center px-5 py-20 text-center sm:py-24 lg:px-16">
+            <div className="mx-auto max-w-3xl">
+              <p className="text-[10px] uppercase tracking-[.28em] text-wine/65">A new chapter begins</p>
+              <h2 className="mt-4 font-display text-5xl leading-none sm:text-7xl">Seven days.<br/><em>Countless memories.</em></h2>
+              <div className="mx-auto my-8 h-px w-28 bg-gold" />
+              <p className="mx-auto max-w-2xl font-display text-lg leading-8 text-wine/75">With joyful hearts, we invite you to share in the wedding celebrations of <strong>Jay Bafna</strong> and <strong>Anisha Gadia</strong> — a journey filled with traditions, music, laughter, family and love.</p>
+            </div>
+          </div>
+          <div className="relative min-h-[52svh] overflow-hidden lg:min-h-[680px]">
+            <img src={floralPalaceImage} alt="Palace courtyard dressed with jasmine, burgundy roses and golden lanterns for the wedding" loading="lazy" width={1536} height={1024} className="absolute inset-0 h-full w-full object-cover" />
+            <div className="invitation-frame absolute inset-3" />
+          </div>
         </div>
       </section>
 
-      <section id="events" className="reveal-section px-5 py-24">
-        <div className="mx-auto max-w-4xl">
+      <section id="events" className="reveal-section relative overflow-hidden px-5 py-24">
+        <img src={receptionImage} alt="" aria-hidden="true" loading="lazy" width={1536} height={1024} className="absolute inset-x-0 top-0 h-72 w-full object-cover opacity-30 sm:h-96 sm:opacity-35" />
+        <div className="absolute inset-x-0 top-0 h-80 bg-gradient-to-b from-wine-deep/20 via-wine-deep/80 to-wine-deep sm:h-[28rem]" />
+        <div className="relative mx-auto max-w-4xl">
           <p className="text-[10px] uppercase tracking-[.28em] text-gold">The celebrations</p>
           <h2 className="mt-3 font-display text-5xl leading-none sm:text-7xl">Our wedding <em>diary</em></h2>
           <p className="mt-5 text-sm text-ivory/60">Select each day to unfold the celebrations.</p>
@@ -134,35 +147,46 @@ function Index() {
         </div>
       </section>
 
-      <section id="hills" className="reveal-section relative overflow-hidden px-5 py-24 text-center sm:grid sm:min-h-[72svh] sm:place-items-center">
-        <img src={terraceImage} alt="" aria-hidden="true" loading="lazy" width={1920} height={1088} className="absolute inset-0 hidden h-full w-full object-cover sm:block" />
-        <div className="absolute inset-0 hidden bg-wine-deep/45 sm:block" />
+      <section id="hills" className="reveal-section relative grid min-h-[100svh] place-items-center overflow-hidden px-5 py-24 text-center sm:min-h-[82svh]">
+        <img src={hillsPortraitImage} alt="Mahabaleshwar hills at sunset framed by a flower-dressed palace arch, with an elephant and peacock" loading="lazy" width={1024} height={1536} className="absolute inset-0 h-full w-full object-cover object-center sm:object-[center_46%]" />
+        <div className="absolute inset-0 bg-wine-deep/30 sm:bg-wine-deep/35" />
         <div className="invitation-frame absolute inset-3 md:inset-7" />
-        <div className="invitation-frame relative z-10 mx-auto mb-10 max-w-2xl overflow-hidden sm:hidden">
-          <img src={terraceImage} alt="Ornate palace terrace overlooking the Mahabaleshwar hills at sunset" loading="lazy" width={1920} height={1088} className="h-auto w-full" />
-        </div>
-        <div className="relative z-10 mx-auto max-w-2xl">
+        <div className="relative z-10 mx-auto mt-[-18svh] max-w-2xl sm:mt-0">
           <p className="mx-auto mb-5 w-fit border border-gold/50 bg-wine-deep/60 px-4 py-2 text-[9px] uppercase tracking-[.22em] text-gold-soft">24—25 November · Mahabaleshwar</p>
-          <h2 className="mx-auto w-fit rounded-sm bg-wine-deep/25 px-6 py-3 font-display text-5xl leading-none backdrop-blur-[2px] sm:text-7xl">And then, <em>the hills.</em></h2>
-          <p className="mx-auto mt-7 max-w-xl rounded-sm bg-wine-deep/20 px-6 py-4 font-display text-lg leading-8 text-ivory/85 backdrop-blur-[2px]">The mountains become our backdrop for a Sangeet beneath the evening sky, a joyful Carnival, and the moment Jay and Anisha begin their forever together.</p>
+          <h2 className="mx-auto w-fit bg-wine-deep/30 px-6 py-3 font-display text-5xl leading-none backdrop-blur-[3px] sm:text-7xl">And then, <em>the hills.</em></h2>
+          <p className="mx-auto mt-6 max-w-xl bg-wine-deep/35 px-6 py-4 font-display text-lg leading-8 text-ivory backdrop-blur-[3px]">The mountains become our backdrop for a Sangeet beneath the evening sky, a joyful Carnival, and the moment Jay and Anisha begin their forever together.</p>
         </div>
       </section>
 
       <section id="venues" className="reveal-section bg-ivory px-5 py-24 text-wine-deep">
         <div className="mx-auto max-w-5xl">
-          <p className="text-[10px] uppercase tracking-[.28em] text-wine/60">Find us here</p>
-          <h2 className="mt-3 font-display text-5xl leading-none sm:text-7xl">Three places.<br/><em>One celebration.</em></h2>
+          <div className="grid items-center gap-10 md:grid-cols-[.8fr_1.2fr]">
+            <div className="relative mx-auto aspect-[2/3] w-full max-w-sm overflow-hidden">
+              <img src={elephantImage} alt="Ceremonial elephant beside a flower-dressed palace arch" loading="lazy" width={1024} height={1536} className="h-full w-full object-cover" />
+              <div className="invitation-frame absolute inset-3" />
+            </div>
+            <div>
+              <p className="text-[10px] uppercase tracking-[.28em] text-wine/60">Find us here</p>
+              <h2 className="mt-3 font-display text-5xl leading-none sm:text-7xl">Three places.<br/><em>One celebration.</em></h2>
+              <p className="mt-6 max-w-lg font-display text-lg leading-8 text-wine/65">From cherished traditions at home to an evening at the Turf Club and celebrations among the hills.</p>
+            </div>
+          </div>
           <div className="mt-12 grid gap-4 md:grid-cols-3">
             {venues.map((venue) => <article key={venue.name} className="border border-gold/45 p-7"><MapPin className="mb-5 h-5 w-5 text-gold"/><h3 className="font-display text-3xl">{venue.name}</h3><p className="mt-2 text-sm text-wine/60">{venue.address}</p><Button asChild variant="invitationGhost" className="mt-7 h-10 rounded-none px-4 text-[9px] uppercase tracking-[.18em]"><a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venue.query)}`} target="_blank" rel="noreferrer"><Navigation />Open map</a></Button></article>)}
           </div>
         </div>
       </section>
 
-      <footer className="relative overflow-hidden px-5 py-24 text-center">
-        <CalendarDays className="mx-auto h-6 w-6 text-gold" />
-        <h2 className="mt-7 font-display text-5xl leading-none sm:text-7xl">See you<br/><em>at the wedding.</em></h2>
-        <p className="mx-auto mt-7 max-w-lg font-display text-lg leading-8 text-ivory/60">Come for the ceremonies, stay for the laughter, music and memories. We cannot wait to celebrate this beautiful beginning with you.</p>
-        <Button variant="invitationGhost" className="mt-9 rounded-full px-5 text-[9px] uppercase tracking-[.18em]" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}><ArrowUp />Back to the beginning</Button>
+      <footer className="relative grid min-h-[72svh] place-items-center overflow-hidden px-5 py-24 text-center">
+        <img src={receptionImage} alt="Candlelit wedding tables with burgundy roses and jasmine in a palace courtyard" loading="lazy" width={1536} height={1024} className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-wine-deep/65" />
+        <div className="invitation-frame absolute inset-3 md:inset-7" />
+        <div className="relative z-10 max-w-2xl">
+          <CalendarDays className="mx-auto h-6 w-6 text-gold" />
+          <h2 className="mt-7 font-display text-5xl leading-none sm:text-7xl">See you<br/><em>at the wedding.</em></h2>
+          <p className="mx-auto mt-7 max-w-lg font-display text-lg leading-8 text-ivory/80">Come for the ceremonies, stay for the laughter, music and memories. We cannot wait to celebrate this beautiful beginning with you.</p>
+          <Button variant="invitationGhost" className="mt-9 rounded-full px-5 text-[9px] uppercase tracking-[.18em]" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}><ArrowUp />Back to the beginning</Button>
+        </div>
       </footer>
     </main>
   );
