@@ -74,7 +74,7 @@ function Index() {
         <div className={`paper-texture invitation-frame relative z-10 mx-6 flex min-h-[55vh] w-[min(86vw,560px)] flex-col items-center justify-center bg-ivory px-7 py-16 text-center text-wine-deep transition-all duration-1000 ${opened ? "animate-[card-rise_1.5s_cubic-bezier(.2,.8,.2,1)_forwards]" : "translate-y-[115%] opacity-0"}`}>
           <p className="text-[10px] uppercase tracking-[.3em] text-wine">Together with their families</p>
           <div className="my-6 h-px w-24 bg-gold" />
-          <h1 className="font-names text-7xl leading-[1.1] sm:text-8xl">Jay <span className="block py-2 text-4xl">&amp;</span> Anisha</h1>
+          <h1 className="font-names text-6xl leading-none sm:text-8xl sm:leading-[1.1]">Jay <span className="block py-1 text-3xl leading-none sm:py-2 sm:text-4xl">&amp;</span> Anisha</h1>
           <p className="mt-7 font-display text-xl italic">You are cordially invited</p>
           <p className="mt-5 text-xs uppercase tracking-[.22em] text-wine/75">21 — 27 November 2026</p>
           <p className="mt-2 text-[10px] uppercase tracking-[.25em] text-wine/60">Pune · Mahabaleshwar</p>
