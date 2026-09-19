@@ -24,11 +24,14 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const events = [
+const puneEvents = [
   { day: "21", title: "Moong Bhekarna + Mehndi", items: [{ time: "1:00 PM", name: "Moong Bhekarna + Mehndi", venue: "Home (A39) · Market Yard" }] },
   { day: "22", title: "Siddhachakra Pujan + Mangalsadh", items: [{ time: "Afternoon", name: "Home Siddhachakra Pujan", venue: "Home (A39) · Market Yard" }, { time: "Evening", name: "Mangalsadh + Mehndi", venue: "Home (A39) · Market Yard" }] },
   { day: "23", title: "Kumkum · Mahera · Reception", items: [{ time: "Morning", name: "Kumkum", venue: "Turf Club · Race Course, Pune" }, { time: "Afternoon", name: "Mahera", venue: "Turf Club · Race Course, Pune" }, { time: "Evening", name: "Reception", venue: "Turf Club · Race Course, Pune" }] },
   { day: "24", title: "Bin Nakashi → Mahabaleshwar", items: [{ time: "Morning", name: "Bin Nakashi from Home", venue: "Home (A39) · Market Yard" }, { time: "Day", name: "Departure for Mahabaleshwar", venue: "Journey to the hills" }, { time: "Evening", name: "Sangeet", venue: "Taj Mahabaleshwar" }] },
+];
+
+const hillsEvents = [
   { day: "25", title: "Carnival · Pheras · Sufi Night", items: [{ time: "Morning", name: "Carnival", venue: "Taj Mahabaleshwar" }, { time: "Evening", name: "Pheras + Sufi Night", venue: "Taj Mahabaleshwar" }] },
   { day: "26", title: "Departure to Pune + Bahu Swagat", items: [{ time: "Whole day", name: "Departure to Pune followed by Bahu Swagat", venue: "Home (A39) · Market Yard" }] },
   { day: "27", title: "Churma Lunch", items: [{ time: "Afternoon", name: "Churma Lunch", venue: "Home (A39) · Market Yard" }] },
@@ -39,6 +42,24 @@ const venues = [
   { name: "Turf Club", address: "Race Course, Pune", query: "Turf Club Race Course Pune" },
   { name: "Taj Mahabaleshwar", address: "Mahabaleshwar, Maharashtra", query: "Taj Mahabaleshwar" },
 ];
+
+function DiaryAccordion({ events, defaultDay }: { events: typeof puneEvents; defaultDay?: string }) {
+  return (
+    <Accordion type="single" collapsible {...(defaultDay ? { defaultValue: defaultDay } : {})} className="mt-12 space-y-3">
+      {events.map((event) => (
+        <AccordionItem key={event.day} value={`day-${event.day}`} className="event-panel rounded-sm px-5 data-[state=open]:border-gold/55">
+          <AccordionTrigger className="gap-5 py-5 hover:no-underline [&>svg]:text-gold">
+            <span className="flex min-w-14 flex-col text-left text-[9px] uppercase tracking-[.18em] text-gold"><strong className="font-display text-4xl font-normal leading-none text-gold-soft">{event.day}</strong>Nov</span>
+            <span className="flex-1 text-left font-display text-xl font-normal sm:text-2xl">{event.title}</span>
+          </AccordionTrigger>
+          <AccordionContent className="border-t border-gold/15 pb-5 pt-2">
+            {event.items.map((item) => <div key={`${item.time}-${item.name}`} className="grid gap-2 border-b border-ivory/10 py-4 last:border-0 sm:grid-cols-[120px_1fr]"><span className="text-[10px] uppercase tracking-[.16em] text-gold">{item.time}</span><span><strong className="block font-display text-xl font-normal text-gold-soft">{item.name}</strong><span className="mt-1 flex items-center gap-1.5 text-xs text-ivory/55"><MapPin className="h-3.5 w-3.5" />{item.venue}</span></span></div>)}
+          </AccordionContent>
+        </AccordionItem>
+      ))}
+    </Accordion>
+  );
+}
 
 function Index() {
   const [opened, setOpened] = useState(false);
@@ -128,22 +149,10 @@ function Index() {
         <img src={receptionImage} alt="" aria-hidden="true" loading="lazy" width={1536} height={1024} className="absolute inset-x-0 top-0 h-72 w-full object-cover opacity-30 sm:h-96 sm:opacity-35" />
         <div className="absolute inset-x-0 top-0 h-80 bg-gradient-to-b from-wine-deep/20 via-wine-deep/80 to-wine-deep sm:h-[28rem]" />
         <div className="relative mx-auto max-w-4xl">
-          <p className="text-[10px] uppercase tracking-[.28em] text-gold">The celebrations</p>
+          <p className="text-[10px] uppercase tracking-[.28em] text-gold">The celebrations · Pune</p>
           <h2 className="mt-3 font-display text-5xl leading-none sm:text-7xl">Our wedding <em>diary</em></h2>
           <p className="mt-5 text-sm text-ivory/60">Select each day to unfold the celebrations.</p>
-          <Accordion type="single" collapsible defaultValue="day-21" className="mt-12 space-y-3">
-            {events.map((event) => (
-              <AccordionItem key={event.day} value={`day-${event.day}`} className="event-panel rounded-sm px-5 data-[state=open]:border-gold/55">
-                <AccordionTrigger className="gap-5 py-5 hover:no-underline [&>svg]:text-gold">
-                  <span className="flex min-w-14 flex-col text-left text-[9px] uppercase tracking-[.18em] text-gold"><strong className="font-display text-4xl font-normal leading-none text-gold-soft">{event.day}</strong>Nov</span>
-                  <span className="flex-1 text-left font-display text-xl font-normal sm:text-2xl">{event.title}</span>
-                </AccordionTrigger>
-                <AccordionContent className="border-t border-gold/15 pb-5 pt-2">
-                  {event.items.map((item) => <div key={`${item.time}-${item.name}`} className="grid gap-2 border-b border-ivory/10 py-4 last:border-0 sm:grid-cols-[120px_1fr]"><span className="text-[10px] uppercase tracking-[.16em] text-gold">{item.time}</span><span><strong className="block font-display text-xl font-normal text-gold-soft">{item.name}</strong><span className="mt-1 flex items-center gap-1.5 text-xs text-ivory/55"><MapPin className="h-3.5 w-3.5" />{item.venue}</span></span></div>)}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <DiaryAccordion events={puneEvents} defaultDay="day-21" />
         </div>
       </section>
 
@@ -155,6 +164,15 @@ function Index() {
           <p className="mx-auto mb-5 w-fit border border-gold/50 bg-wine-deep/60 px-4 py-2 text-[9px] uppercase tracking-[.22em] text-gold-soft">24—25 November · Mahabaleshwar</p>
           <h2 className="mx-auto w-fit bg-wine-deep/30 px-6 py-3 font-display text-5xl leading-none backdrop-blur-[3px] sm:text-7xl">And then, <em>the hills.</em></h2>
           <p className="mx-auto mt-6 max-w-xl bg-wine-deep/35 px-6 py-4 font-display text-lg leading-8 text-ivory backdrop-blur-[3px]">The mountains become our backdrop for a Sangeet beneath the evening sky, a joyful Carnival, and the moment Jay and Anisha begin their forever together.</p>
+        </div>
+      </section>
+
+      <section className="reveal-section relative overflow-hidden px-5 pb-24 pt-8">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-[10px] uppercase tracking-[.28em] text-gold">The celebrations · Mahabaleshwar</p>
+          <h2 className="mt-3 font-display text-5xl leading-none sm:text-7xl">The diary, <em>continued</em></h2>
+          <p className="mt-5 text-sm text-ivory/60">The celebrations move on among the hills — and back home.</p>
+          <DiaryAccordion events={hillsEvents} />
         </div>
       </section>
 
