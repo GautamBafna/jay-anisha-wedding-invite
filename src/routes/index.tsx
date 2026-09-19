@@ -24,11 +24,14 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const events = [
+const puneEvents = [
   { day: "21", title: "Moong Bhekarna + Mehndi", items: [{ time: "1:00 PM", name: "Moong Bhekarna + Mehndi", venue: "Home (A39) · Market Yard" }] },
   { day: "22", title: "Siddhachakra Pujan + Mangalsadh", items: [{ time: "Afternoon", name: "Home Siddhachakra Pujan", venue: "Home (A39) · Market Yard" }, { time: "Evening", name: "Mangalsadh + Mehndi", venue: "Home (A39) · Market Yard" }] },
   { day: "23", title: "Kumkum · Mahera · Reception", items: [{ time: "Morning", name: "Kumkum", venue: "Turf Club · Race Course, Pune" }, { time: "Afternoon", name: "Mahera", venue: "Turf Club · Race Course, Pune" }, { time: "Evening", name: "Reception", venue: "Turf Club · Race Course, Pune" }] },
   { day: "24", title: "Bin Nakashi → Mahabaleshwar", items: [{ time: "Morning", name: "Bin Nakashi from Home", venue: "Home (A39) · Market Yard" }, { time: "Day", name: "Departure for Mahabaleshwar", venue: "Journey to the hills" }, { time: "Evening", name: "Sangeet", venue: "Taj Mahabaleshwar" }] },
+];
+
+const hillsEvents = [
   { day: "25", title: "Carnival · Pheras · Sufi Night", items: [{ time: "Morning", name: "Carnival", venue: "Taj Mahabaleshwar" }, { time: "Evening", name: "Pheras + Sufi Night", venue: "Taj Mahabaleshwar" }] },
   { day: "26", title: "Departure to Pune + Bahu Swagat", items: [{ time: "Whole day", name: "Departure to Pune followed by Bahu Swagat", venue: "Home (A39) · Market Yard" }] },
   { day: "27", title: "Churma Lunch", items: [{ time: "Afternoon", name: "Churma Lunch", venue: "Home (A39) · Market Yard" }] },
