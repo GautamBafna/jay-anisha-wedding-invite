@@ -167,6 +167,15 @@ function Index() {
         </div>
       </section>
 
+      <section className="reveal-section relative overflow-hidden px-5 pb-24 pt-8">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-[10px] uppercase tracking-[.28em] text-gold">The celebrations · Mahabaleshwar</p>
+          <h2 className="mt-3 font-display text-5xl leading-none sm:text-7xl">The diary, <em>continued</em></h2>
+          <p className="mt-5 text-sm text-ivory/60">The celebrations move on among the hills — and back home.</p>
+          <DiaryAccordion events={hillsEvents} />
+        </div>
+      </section>
+
       <section id="venues" className="reveal-section bg-ivory px-5 py-24 text-wine-deep">
         <div className="mx-auto max-w-5xl">
           <div className="grid items-center gap-10 md:grid-cols-[.8fr_1.2fr]">
