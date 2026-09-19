@@ -90,6 +90,7 @@ function Index() {
 
       <section className={`fixed inset-0 z-50 grid place-items-center overflow-hidden bg-wine-deep transition-[opacity,visibility] duration-500 ${opened ? "pointer-events-none invisible opacity-0 delay-[1100ms]" : "visible opacity-100"}`} aria-label="Open wedding invitation">
         <img src={envelopeImage} alt="" aria-hidden="true" className={`absolute inset-0 h-full w-full object-cover transition-transform duration-[2400ms] ${opened ? "scale-105" : "scale-100"}`} />
+        <div className="absolute inset-0 bg-wine-deep/35" />
         <div className="invitation-frame absolute inset-3 md:inset-7" />
         <div className={`paper-texture invitation-frame relative z-10 mx-6 flex min-h-[55vh] w-[min(86vw,560px)] flex-col items-center justify-center bg-ivory px-7 py-16 text-center text-wine-deep transition-all duration-1000 ${opened ? "animate-[card-rise_1.5s_cubic-bezier(.2,.8,.2,1)_forwards]" : "translate-y-[115%] opacity-0"}`}>
           <p className="text-[10px] uppercase tracking-[.3em] text-wine">Together with their families</p>
