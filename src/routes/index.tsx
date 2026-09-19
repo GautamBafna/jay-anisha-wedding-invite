@@ -45,7 +45,7 @@ const venues = [
 
 function DiaryAccordion({ events, defaultDay }: { events: typeof puneEvents; defaultDay?: string }) {
   return (
-    <Accordion type="single" collapsible defaultValue={defaultDay} className="mt-12 space-y-3">
+    <Accordion type="single" collapsible {...(defaultDay ? { defaultValue: defaultDay } : {})} className="mt-12 space-y-3">
       {events.map((event) => (
         <AccordionItem key={event.day} value={`day-${event.day}`} className="event-panel rounded-sm px-5 data-[state=open]:border-gold/55">
           <AccordionTrigger className="gap-5 py-5 hover:no-underline [&>svg]:text-gold">
