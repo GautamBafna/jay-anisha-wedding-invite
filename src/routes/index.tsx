@@ -149,22 +149,10 @@ function Index() {
         <img src={receptionImage} alt="" aria-hidden="true" loading="lazy" width={1536} height={1024} className="absolute inset-x-0 top-0 h-72 w-full object-cover opacity-30 sm:h-96 sm:opacity-35" />
         <div className="absolute inset-x-0 top-0 h-80 bg-gradient-to-b from-wine-deep/20 via-wine-deep/80 to-wine-deep sm:h-[28rem]" />
         <div className="relative mx-auto max-w-4xl">
-          <p className="text-[10px] uppercase tracking-[.28em] text-gold">The celebrations</p>
+          <p className="text-[10px] uppercase tracking-[.28em] text-gold">The celebrations · Pune</p>
           <h2 className="mt-3 font-display text-5xl leading-none sm:text-7xl">Our wedding <em>diary</em></h2>
           <p className="mt-5 text-sm text-ivory/60">Select each day to unfold the celebrations.</p>
-          <Accordion type="single" collapsible defaultValue="day-21" className="mt-12 space-y-3">
-            {events.map((event) => (
-              <AccordionItem key={event.day} value={`day-${event.day}`} className="event-panel rounded-sm px-5 data-[state=open]:border-gold/55">
-                <AccordionTrigger className="gap-5 py-5 hover:no-underline [&>svg]:text-gold">
-                  <span className="flex min-w-14 flex-col text-left text-[9px] uppercase tracking-[.18em] text-gold"><strong className="font-display text-4xl font-normal leading-none text-gold-soft">{event.day}</strong>Nov</span>
-                  <span className="flex-1 text-left font-display text-xl font-normal sm:text-2xl">{event.title}</span>
-                </AccordionTrigger>
-                <AccordionContent className="border-t border-gold/15 pb-5 pt-2">
-                  {event.items.map((item) => <div key={`${item.time}-${item.name}`} className="grid gap-2 border-b border-ivory/10 py-4 last:border-0 sm:grid-cols-[120px_1fr]"><span className="text-[10px] uppercase tracking-[.16em] text-gold">{item.time}</span><span><strong className="block font-display text-xl font-normal text-gold-soft">{item.name}</strong><span className="mt-1 flex items-center gap-1.5 text-xs text-ivory/55"><MapPin className="h-3.5 w-3.5" />{item.venue}</span></span></div>)}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <DiaryAccordion events={puneEvents} defaultDay="day-21" />
         </div>
       </section>
 
