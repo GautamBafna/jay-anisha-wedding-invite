@@ -43,6 +43,24 @@ const venues = [
   { name: "Taj Mahabaleshwar", address: "Mahabaleshwar, Maharashtra", query: "Taj Mahabaleshwar" },
 ];
 
+function DiaryAccordion({ events, defaultDay }: { events: typeof puneEvents; defaultDay?: string }) {
+  return (
+    <Accordion type="single" collapsible defaultValue={defaultDay} className="mt-12 space-y-3">
+      {events.map((event) => (
+        <AccordionItem key={event.day} value={`day-${event.day}`} className="event-panel rounded-sm px-5 data-[state=open]:border-gold/55">
+          <AccordionTrigger className="gap-5 py-5 hover:no-underline [&>svg]:text-gold">
+            <span className="flex min-w-14 flex-col text-left text-[9px] uppercase tracking-[.18em] text-gold"><strong className="font-display text-4xl font-normal leading-none text-gold-soft">{event.day}</strong>Nov</span>
+            <span className="flex-1 text-left font-display text-xl font-normal sm:text-2xl">{event.title}</span>
+          </AccordionTrigger>
+          <AccordionContent className="border-t border-gold/15 pb-5 pt-2">
+            {event.items.map((item) => <div key={`${item.time}-${item.name}`} className="grid gap-2 border-b border-ivory/10 py-4 last:border-0 sm:grid-cols-[120px_1fr]"><span className="text-[10px] uppercase tracking-[.16em] text-gold">{item.time}</span><span><strong className="block font-display text-xl font-normal text-gold-soft">{item.name}</strong><span className="mt-1 flex items-center gap-1.5 text-xs text-ivory/55"><MapPin className="h-3.5 w-3.5" />{item.venue}</span></span></div>)}
+          </AccordionContent>
+        </AccordionItem>
+      ))}
+    </Accordion>
+  );
+}
+
 function Index() {
   const [opened, setOpened] = useState(false);
   const [namesFontReady, setNamesFontReady] = useState(false);
