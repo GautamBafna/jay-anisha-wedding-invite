@@ -94,8 +94,8 @@ function Index() {
         <div className="invitation-frame absolute inset-3 md:inset-7" />
         <div className={`paper-texture invitation-frame relative z-10 mx-6 flex min-h-[55vh] w-[min(86vw,560px)] flex-col items-center justify-center bg-ivory px-7 py-16 text-center text-wine-deep transition-all duration-1000 ${opened ? "animate-[card-rise_1.5s_cubic-bezier(.2,.8,.2,1)_forwards]" : "translate-y-[115%] opacity-0"}`}>
           <p className="text-[10px] uppercase tracking-[.3em] text-wine">Together with their families</p>
-          <div className="my-6 h-px w-24 bg-gold" />
-          <h1 className="font-names font-normal text-5xl leading-none sm:text-7xl sm:leading-[1.1]">Jay <span className="block py-1 text-2xl leading-none sm:py-2 sm:text-3xl">&amp;</span> Anisha</h1>
+          <div className="mb-11 mt-5 h-px w-24 bg-gold" />
+          <h1 className="font-names font-normal text-5xl leading-[1.15] sm:text-7xl sm:leading-[1.2]">Jay <span className="my-3 block py-1 text-3xl leading-none sm:my-4 sm:text-4xl">&amp;</span> Anisha</h1>
           <p className="mt-7 font-display text-xl italic">You are cordially invited</p>
           <p className="mt-5 text-xs uppercase tracking-[.22em] text-wine/75">21 — 27 November 2026</p>
           <p className="mt-2 text-[10px] uppercase tracking-[.25em] text-wine/60">Pune · Mahabaleshwar</p>
@@ -109,8 +109,8 @@ function Index() {
         <div className="invitation-frame absolute inset-3 md:inset-7" />
         <div className="relative z-10 mx-5 max-w-2xl bg-ivory/80 px-6 py-10 text-wine-deep shadow-invitation backdrop-blur-[2px] sm:bg-ivory/90 sm:px-14 sm:py-16">
           <p className="text-[10px] uppercase tracking-[.3em]">Together with their families</p>
-          <div className="mx-auto my-5 h-px w-24 bg-gold" />
-          <h1 className="font-names font-normal text-5xl leading-none sm:text-7xl sm:leading-[1.1]">Jay <span className="block py-1 text-2xl leading-none sm:py-2 sm:text-3xl">&amp;</span> Anisha</h1>
+          <div className="mx-auto mb-11 mt-5 h-px w-24 bg-gold" />
+          <h1 className="font-names font-normal text-5xl leading-[1.15] sm:text-7xl sm:leading-[1.2]">Jay <span className="my-3 block py-1 text-3xl leading-none sm:my-4 sm:text-4xl">&amp;</span> Anisha</h1>
           <p className="mt-8 font-display text-2xl italic">You are cordially invited</p>
           <p className="mt-6 font-display text-lg uppercase tracking-[.16em]">21 — 27 November 2026</p>
           <p className="mt-2 text-[10px] uppercase tracking-[.27em] text-wine/70">Pune · Mahabaleshwar</p>
