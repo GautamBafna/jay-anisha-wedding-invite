@@ -204,7 +204,7 @@ function Index() {
         <div className="relative z-10 max-w-2xl">
           <CalendarDays className="mx-auto h-6 w-6 text-gold" />
           <h2 className="mt-7 font-display text-5xl leading-none sm:text-7xl">See you<br/><em>at the wedding.</em></h2>
-          <p className="mt-5 font-display text-base tracking-[.22em] text-gold-soft">#dilseJAANTak</p>
+          <p className="mt-5 font-display text-base tracking-[.22em] text-gold-soft">#dilseJAANtak</p>
           <p className="mx-auto mt-6 max-w-lg font-display text-lg leading-8 text-ivory/80">Come for the ceremonies, stay for the laughter, music and memories. We cannot wait to celebrate this beautiful beginning with you.</p>
           <Button variant="invitationGhost" className="mt-9 rounded-full px-5 text-[9px] uppercase tracking-[.18em]" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}><ArrowUp />Back to the beginning</Button>
         </div>
