@@ -9,6 +9,8 @@ import floralPalaceImage from "@/assets/floral-palace-decor.jpg";
 import elephantImage from "@/assets/royal-elephant-procession.jpg";
 import receptionImage from "@/assets/candlelit-reception.jpg";
 import hillsPortraitImage from "@/assets/mahabaleshwar-hills-portrait.jpg";
+import monogramAsset from "@/assets/jay-anisha-monogram.png.asset.json";
+const monogram = monogramAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -92,10 +94,11 @@ function Index() {
         <img src={envelopeImage} alt="" aria-hidden="true" className={`absolute inset-0 h-full w-full object-cover transition-transform duration-[2400ms] ${opened ? "scale-105" : "scale-100"}`} />
         <div className="absolute inset-0 bg-wine-deep/35" />
         <div className="invitation-frame absolute inset-3 md:inset-7" />
-        <div className={`paper-texture invitation-frame relative z-10 mx-6 flex min-h-[55vh] w-[min(86vw,560px)] flex-col items-center justify-center bg-ivory px-7 py-16 text-center text-wine-deep transition-all duration-1000 ${opened ? "animate-[card-rise_1.5s_cubic-bezier(.2,.8,.2,1)_forwards]" : "translate-y-[115%] opacity-0"}`}>
-          <p className="text-[10px] uppercase tracking-[.3em] text-wine">Together with their families</p>
-          <div className="my-6 h-px w-24 bg-gold" />
-          <h1 className="font-names font-normal text-5xl leading-none sm:text-7xl sm:leading-[1.1]">Jay <span className="block py-1 text-2xl leading-none sm:py-2 sm:text-3xl">&amp;</span> Anisha</h1>
+        <div className={`paper-texture invitation-frame relative z-10 mx-6 flex min-h-[55vh] w-[min(86vw,560px)] flex-col items-center justify-center bg-ivory px-7 py-14 text-center text-wine-deep transition-all duration-1000 ${opened ? "animate-[card-rise_1.5s_cubic-bezier(.2,.8,.2,1)_forwards]" : "translate-y-[115%] opacity-0"}`}>
+          <p className="font-display text-[11px] leading-relaxed tracking-[.14em] text-wine/75">|| Shree Ganeshay Namah ||<br/>|| Shree Sankeshwar Parshwanathay Namah ||</p>
+          <p className="mt-6 text-[10px] uppercase tracking-[.3em] text-wine">Together with their families</p>
+          <div className="mb-10 mt-5 h-px w-24 bg-gold" />
+          <h1 className="font-names font-normal text-5xl leading-[1.2] sm:text-7xl sm:leading-[1.25]">Jay <span className="my-3 block py-1 font-display text-5xl italic leading-none text-gold sm:my-4 sm:text-6xl">&amp;</span> Anisha</h1>
           <p className="mt-7 font-display text-xl italic">You are cordially invited</p>
           <p className="mt-5 text-xs uppercase tracking-[.22em] text-wine/75">21 — 27 November 2026</p>
           <p className="mt-2 text-[10px] uppercase tracking-[.25em] text-wine/60">Pune · Mahabaleshwar</p>
@@ -107,10 +110,11 @@ function Index() {
         <img src={palaceImage} alt="Royal palace arch overlooking the Mahabaleshwar hills with a peacock and elephant" width={1440} height={1920} className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-wine-deep/15 sm:bg-wine-deep/25" />
         <div className="invitation-frame absolute inset-3 md:inset-7" />
-        <div className="relative z-10 mx-5 max-w-2xl bg-ivory/80 px-6 py-10 text-wine-deep shadow-invitation backdrop-blur-[2px] sm:bg-ivory/90 sm:px-14 sm:py-16">
-          <p className="text-[10px] uppercase tracking-[.3em]">Together with their families</p>
-          <div className="mx-auto my-5 h-px w-24 bg-gold" />
-          <h1 className="font-names font-normal text-5xl leading-none sm:text-7xl sm:leading-[1.1]">Jay <span className="block py-1 text-2xl leading-none sm:py-2 sm:text-3xl">&amp;</span> Anisha</h1>
+        <div className="relative z-10 mx-5 max-w-2xl bg-ivory/80 px-6 py-10 text-wine-deep shadow-invitation backdrop-blur-[2px] sm:bg-ivory/90 sm:px-14 sm:py-14">
+          <p className="font-display text-[11px] leading-relaxed tracking-[.14em] text-wine/75">|| Shree Ganeshay Namah ||<br/>|| Shree Sankeshwar Parshwanathay Namah ||</p>
+          <p className="mt-6 text-[10px] uppercase tracking-[.3em]">Together with their families</p>
+          <div className="mx-auto mb-10 mt-5 h-px w-24 bg-gold" />
+          <h1 className="font-names font-normal text-5xl leading-[1.2] sm:text-7xl sm:leading-[1.25]">Jay <span className="my-3 block py-1 font-display text-5xl italic leading-none text-gold sm:my-4 sm:text-6xl">&amp;</span> Anisha</h1>
           <p className="mt-8 font-display text-2xl italic">You are cordially invited</p>
           <p className="mt-6 font-display text-lg uppercase tracking-[.16em]">21 — 27 November 2026</p>
           <p className="mt-2 text-[10px] uppercase tracking-[.27em] text-wine/70">Pune · Mahabaleshwar</p>
@@ -120,7 +124,7 @@ function Index() {
 
       <nav className="sticky top-0 z-30 border-y border-gold/25 bg-wine-deep/90 px-4 py-3 backdrop-blur-xl">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4">
-          <a href="#home" className="font-display text-xl text-gold-soft">J &amp; A</a>
+          <a href="#home" aria-label="Jay & Anisha — home" className="flex items-center gap-3"><img src={monogram} alt="Jay and Anisha monogram" className="h-10 w-10 rounded-full border border-gold/50 object-cover" /></a>
           <div className="flex gap-5 overflow-x-auto text-[9px] uppercase tracking-[.18em] text-ivory/70"><a href="#events">Events</a><a href="#hills">The hills</a><a href="#venues">Venues</a></div>
         </div>
       </nav>
@@ -129,6 +133,7 @@ function Index() {
         <div className="grid lg:grid-cols-[1.05fr_.95fr]">
           <div className="flex items-center px-5 py-20 text-center sm:py-24 lg:px-16">
             <div className="mx-auto max-w-3xl">
+              <img src={monogram} alt="Jay and Anisha wedding monogram with a peacock and a decorated elephant" loading="lazy" className="mx-auto mb-10 w-44 rounded-xl border border-gold/50 shadow-invitation sm:w-56" />
               <p className="text-[10px] uppercase tracking-[.28em] text-wine/65">A new chapter begins</p>
               <h2 className="mt-4 font-display text-5xl leading-none sm:text-7xl">Seven days.<br/><em>Countless memories.</em></h2>
               <div className="mx-auto my-8 h-px w-28 bg-gold" />
@@ -199,7 +204,8 @@ function Index() {
         <div className="relative z-10 max-w-2xl">
           <CalendarDays className="mx-auto h-6 w-6 text-gold" />
           <h2 className="mt-7 font-display text-5xl leading-none sm:text-7xl">See you<br/><em>at the wedding.</em></h2>
-          <p className="mx-auto mt-7 max-w-lg font-display text-lg leading-8 text-ivory/80">Come for the ceremonies, stay for the laughter, music and memories. We cannot wait to celebrate this beautiful beginning with you.</p>
+          <p className="mt-5 font-display text-base tracking-[.22em] text-gold-soft">#dilseJAANTak</p>
+          <p className="mx-auto mt-6 max-w-lg font-display text-lg leading-8 text-ivory/80">Come for the ceremonies, stay for the laughter, music and memories. We cannot wait to celebrate this beautiful beginning with you.</p>
           <Button variant="invitationGhost" className="mt-9 rounded-full px-5 text-[9px] uppercase tracking-[.18em]" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}><ArrowUp />Back to the beginning</Button>
         </div>
       </footer>
