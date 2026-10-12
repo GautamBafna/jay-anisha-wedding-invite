@@ -24,14 +24,22 @@ jobs:
           node-version: 20
       - run: npm install
       - run: npm run build
-      - name: Show build output
+      - name: Prepare static site
         run: |
-          echo "=== top level ==="
-          ls -la
-          echo "=== built files ==="
-          find . -type f \( -name "*.html" -o -name "*.js" -o -name "*.css" \) -not -path "./node_modules/*" -not -path "./.git/*" -not -path "./src/*" | head -60
-          echo "=== dist ==="
-          find dist -maxdepth 3 | head -40
-          echo "=== .output ==="
-          find .output -maxdepth 3 2>/dev/null | head -40
-          exit 1
+          cp .output/public/_shell.html .output/public/index.html
+          cp .output/public/_shell.html .output/public/404.html
+          touch .output/public/.nojekyll
+          ls -la .output/public
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .output/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
