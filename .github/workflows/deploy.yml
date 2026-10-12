@@ -24,9 +24,20 @@ jobs:
           node-version: 20
       - run: npm install
       - run: npm run build
+      - name: Prepare static output
+        run: |
+          OUT=dist/client
+          [ -d "$OUT" ] || OUT=dist
+          echo "Output folder: $OUT"
+          ls -la "$OUT"
+          if [ ! -f "$OUT/index.html" ] && [ -f "$OUT/_shell.html" ]; then
+            cp "$OUT/_shell.html" "$OUT/index.html"
+          fi
+          cp "$OUT/index.html" "$OUT/404.html"
+          echo "OUT=$OUT" >> "$GITHUB_ENV"
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: ${{ env.OUT }}
 
   deploy:
     needs: build
